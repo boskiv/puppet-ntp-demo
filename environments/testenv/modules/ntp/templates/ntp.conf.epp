@@ -1,0 +1,9 @@
+#Managed by puppet EPP template - do not edit
+server <%= $ntp::ntp_local_server %> iburst prefer
+<% $ntp::ntp_regional_server.each  |$server| { -%>
+server <%= $server %>
+<% } -%>
+driftfile /var/lib/ntp/drift
+<% unless $ntp::ntp_monitor == true { -%>
+disable monitor
+<% } -%>

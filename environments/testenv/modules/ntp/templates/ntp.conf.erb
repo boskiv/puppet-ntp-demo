@@ -1,0 +1,9 @@
+#Managed by puppet erb template - do not edit
+server <%= @ntp_local_server %> iburst prefer
+<% @ntp_regional_server.each do |s| -%>
+server <%= s %>
+<% end -%>
+driftfile /var/lib/ntp/drift
+<% if @monitor == false -%>
+disable monitor
+<% end -%>

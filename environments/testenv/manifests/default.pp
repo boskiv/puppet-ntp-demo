@@ -1,0 +1,1 @@
+notice('Hello from vagrant!')

@@ -1,0 +1,3 @@
+---
+ntp::ntp_service: 'ntp'
+ntp::admingroup: 'root'
